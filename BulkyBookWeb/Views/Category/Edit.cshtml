@@ -1,0 +1,27 @@
+﻿@using BulkyBookWeb.Model;
+ @model Category
+
+
+
+<form method="post" asp-action="Edit" >
+    <div class="border p-3 mt-4">
+        <div class="text-primary">
+            <h2> Edit Category</h2>
+            <hr />
+        </div>
+        <div asp-validation-summary="All"></div>
+        <div class="mb-3">
+            <label asp-for="Name"> </label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="DisplayedOrder"> </label>
+            <input asp-for="DisplayedOrder" class="form-control" />
+            <span asp-validation-for="DisplayedOrder" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:150px">Update</button>
+        <a asp-controller="Category" asp-action="Index" asp-route-num=1 class="btn btn-secondary" style="width:150px">Back to list </a>
+    </div>
+</form>
+

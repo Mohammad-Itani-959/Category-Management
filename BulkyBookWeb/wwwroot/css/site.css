@@ -1,0 +1,28 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+/* Add this to your CSS file */
+ul.horizontal-list {
+    display: flex; /* Display the ul as a flex container */
+    list-style-type: none; /* Remove default list bullet points */
+    padding: 0; /* Remove default padding */
+}
+
+    ul.horizontal-list li {
+        margin-right: 10px; /* Add spacing between li items */
+    }

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33627.172
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BulkyBookWeb", "BulkyBookWeb\BulkyBookWeb.csproj", "{AA4B5D43-9D02-49F5-831E-F7B8BC00106B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BulkyBook.Api", "BulkyBook.Api\BulkyBook.Api.csproj", "{856F0B5B-9FF9-45A2-991C-19EDC22C06F2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AA4B5D43-9D02-49F5-831E-F7B8BC00106B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA4B5D43-9D02-49F5-831E-F7B8BC00106B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA4B5D43-9D02-49F5-831E-F7B8BC00106B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA4B5D43-9D02-49F5-831E-F7B8BC00106B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{856F0B5B-9FF9-45A2-991C-19EDC22C06F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{856F0B5B-9FF9-45A2-991C-19EDC22C06F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{856F0B5B-9FF9-45A2-991C-19EDC22C06F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{856F0B5B-9FF9-45A2-991C-19EDC22C06F2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DB54CE7B-FF90-417A-8FD1-2FC07C228E03}
+	EndGlobalSection
+EndGlobal

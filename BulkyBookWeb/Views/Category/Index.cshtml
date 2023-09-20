@@ -1,0 +1,115 @@
+﻿@using BulkyBookWeb.Model;
+@model RecordsViewList
+@{
+    Layout = "_Layout";
+}
+<div class="container p-3">
+
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">category List</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-controller="Category" asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i> &nbsp; Create New Category</a>
+        </div>
+    </div>
+</div>
+<br />
+<br />
+
+<table class="table table-bordered table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th>
+                Category Name
+            </th>
+            <th>
+                Display order
+            </th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody id="data-list">
+        <!-- Table rows will be populated here -->
+    </tbody>
+</table>
+<br />
+<br />
+<div>
+    <ul id="pages" class="horizontal-list ">
+
+    </ul>
+</div>
+
+<script>
+    debugger;
+    $(document).ready(function () {
+
+        var token = 'CategoryAPI';
+        $.ajax({
+            url: 'http://localhost:7025/api/Category/@ViewBag.CurrentPage',
+            type: 'GET',
+            headers: {
+                'Authorization': 'Bearer ' + token
+            },
+            success: function (result) {
+                debugger;
+                console.log(result);
+                result.records.forEach(obj => {
+                    const row = document.createElement("tr");
+
+                    // Create and append cells for Category Name and Display Order
+                    const nameCell = document.createElement("td");
+                    nameCell.textContent = obj.name;
+                    row.appendChild(nameCell);
+
+                    const displayedOrderCell = document.createElement("td");
+                    displayedOrderCell.textContent = obj.displayedOrder;
+                    row.appendChild(displayedOrderCell);
+
+                    // Create and append Edit and Delete links
+                    const editCell = document.createElement("td");
+                    const editLink = document.createElement("a");
+                    editLink.href = `/Category/Edit/${obj.id}`;
+                    editLink.textContent = "Edit";
+                    editCell.appendChild(editLink);
+                    row.appendChild(editCell);
+
+                    const deleteCell = document.createElement("td");
+                    const deleteLink = document.createElement("a");
+                    deleteLink.href = `/Category/Delete/${obj.id}`;
+                    deleteLink.textContent = "Delete";
+                    deleteCell.appendChild(deleteLink);
+                    row.appendChild(deleteCell);
+
+                    // Append the row to the table body
+                    document.getElementById("data-list").appendChild(row);
+                });
+
+                var pages = result.totalPages;
+                for (var i = 1; i <= pages; i++) {
+                    debugger;
+                    const pagenum = document.createElement("li");
+                    const link = document.createElement("a");
+                    link.textContent = i;
+                    link.href = `/Category?page=${i}`;
+                    if (i == result.currentPage) {
+                        link.style.color = "red";
+                    }
+                    pagenum.appendChild(link);
+                    document.getElementById("pages").appendChild(pagenum);
+                }
+            }
+        });
+    });
+</script>
+
+
+
+<br />
+<br />
+
+
+
+
